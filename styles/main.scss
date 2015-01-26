@@ -9,11 +9,15 @@
 
 $concrete: #f5f5f1;
 $box-background: white;
+$apple-greeen: #78c042;
 
 $background-color: $concrete;
+$price-color: $apple-green;
 
 body {
   background-color: $background-color;
+  font-size: 6px;
+  text-family: "helvetica", sans-serif;
 }
 h1 {
   margin: 0;
@@ -26,12 +30,9 @@ p {
   overflow: hidden;
 
 }
-span {
-  font-size: 10px;
-
-}
 .beards-list {
   @include outer-container(728px);
+  text-align: center;
 
 }
 .layout {
@@ -45,10 +46,22 @@ span {
   height: 216px;
 
 }
+span {
+  font-size: 10px;
+}
 .layout img {
   width: 100%;
 
 }
+.title {
+  display: block;
+}
+.shop {
+  display: inline-block;
+}
 .price {
-  color: green;
+  color: $price-color;
+  display: inline-block;
+  text-align: right;
+  text-size: 10px;
 }
