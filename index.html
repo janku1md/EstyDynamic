@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Etsy Listing</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.css">
+  <link rel="stylesheet" src="styles/main.css">
+
+</head>
+
+<body>
+
+  <script src="scripts/bower_components/jquery/dist/jquery.js"></script>
+  <h1>Let's Wear Beards!</h1>
+
+  <div class="beards-list">
+  </div>
+
+
+  <script type="text/template" data-template-name="beard-item">
+    <div class="layout">
+      <img src="<% image %>" />
+      <span>
+        <% title %>
+      </span>
+      <span>
+        <% shop %>
+      </span>
+      <span class="price"> $
+        <% price %>
+      </span>
+    </div>
+  </script>
+
+
+  <script type="text/javascript" src="scripts/data-sorted.js"></script>
+  <script type="text/javascript" src="scripts/main.js"></script>
+
+</body>
+
+</html>

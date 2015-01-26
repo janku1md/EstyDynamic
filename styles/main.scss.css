@@ -1,0 +1,6 @@
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+/* Color */
+
+$Concrete: #F5F5F1;
+$background-color: $Concrete
