@@ -5,20 +5,27 @@
   <meta charset="UTF-8">
   <title>Etsy Listing</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
   <link rel="stylesheet" href="styles/main.css">
 
 </head>
 
 <body>
 
-  <script src="scripts/bower_components/jquery/dist/jquery.js"></script>
-  <h1>Let's Wear Beards!</h1>
-
-  <div class="beards-list">
-  </div>
+<!--   <script src="scripts/bower_components/jquery/dist/jquery.js"></script> -->
 
 
-  <script type="text/template" data-template-name="beard-item">
+  <header>
+    <img src="https://www.etsy.com/assets/dist/images/etsylogo.20150106184300.png">
+    <form>
+     <input type="text" placeholder="Search">
+     <input type="submit" value="Search">
+   </form>
+  </header>
+
+
+<div class="items-list">
+  <script type="text/template" data-template-name="searchItems">
     <div class="layout">
       <img src="<% image %>" />
       <span>
@@ -32,10 +39,16 @@
       </span>
     </div>
   </script>
+</div>
 
 
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/underscore/underscore.js"></script>
   <script type="text/javascript" src="scripts/data-sorted.js"></script>
   <script type="text/javascript" src="scripts/main.js"></script>
+
+
 
 </body>
 

@@ -1,23 +1,24 @@
 (function() {
   'use strict';
 
-  var beards = rawDataSorted.results;
+  var searchBoxItems = rawDataSorted.results;
 
   $(document).ready(function() {
 
-    var $list = $('.beards-list');
+    var $list = $('.items-list');
 
-    beards.forEach(function(beard) {
-      var beardText = renderTemplate('beard-item', {
-        image: beard.Images[0].url_170x135,
-        title: beard.title,
-        shop: beard.Shop.shop_name,
-        price: beard.price,
+    searchBoxItems.forEach(function(searchItems) {
+      var beardText = renderTemplate('searchItems', {
+        image: searchItems.Images[0].url_170x135,
+        title: searchItems.title,
+        shop: searchItems.Shop.shop_name,
+        price: searchItems.price
       });
       $list.append(beardText);
     });
 
   });
+
 
   function renderTemplate(name, data) {
     var $template = $('[data-template-name=' + name + ']').text();
@@ -28,3 +29,18 @@
   }
 
 })();
+
+
+
+$('form').on('submit', function(event) {
+  event.preventDefault();
+  var itemRequest = ($(this).find('input').val());
+  $.ajax({
+    url: "https://api.etsy.com/v2/listings/active.js?api_key=cdwxq4soa7q4zuavbtynj8wx&keywords=" + itemRequest + "&includes=Images,Shop",
+    type: "GET",
+    dataType: 'jsonp'
+  })
+  .done(function(data) {
+    // console.log(data);
+  });
+});
